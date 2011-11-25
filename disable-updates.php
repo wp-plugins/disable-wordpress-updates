@@ -4,7 +4,7 @@ Plugin Name: Disable WordPress Updates
 Description: Disables the theme, plugin and core update checking, the related cronjobs and notification system.
 Plugin URI:  http://www.officetrend.de/1793/plugin-disable-wordpress-updates-theme-plugin-und-core/
 Version:     1.2
-Author:      Tanja Preu&szlig;e
+Author:      Tanja Preu&szlig;e 
 Author URI:  http://www.officetrend.de/
 
     This program is free software; you can redistribute it and/or modify
