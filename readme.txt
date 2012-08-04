@@ -4,7 +4,7 @@ Contributors: Crazy Girl
 Donate link: none
 Tags: disable, updates, theme, plugin, core
 Requires at least: 2.8
-Tested up to: 3.3
+Tested up to: 3.4.1
 Stable tag: 1.2
 
 Disables the theme, plugin and core update checking, the related cronjobs and notification system.
