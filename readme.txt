@@ -11,11 +11,6 @@ Disables the theme, plugin and core update checking, the related cronjobs and no
 
 == Description ==
 
-= GERMAN: =
-
-* [Deutsche Plugin-Beschreibung auf officetrend.de](http://www.officetrend.de/1793/plugin-disable-wordpress-updates-theme-plugin-und-core/ "Plugin Disable Wordpress Updates")
-
-= ENGLISH: =
 This Plugin completely disables the theme, plugin and core update checking system in WordPress. The plugin prevents WordPress from 
 checking for updates incl. cronjobs, and prevents any notifications from being displayed.
 
