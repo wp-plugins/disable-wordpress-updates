@@ -16,9 +16,9 @@ This plugin completely disables the theme, plugin and core update checking syste
 checking for updates including cronjobs, and prevents any notifications from being displayed.
 
 This plugin combines und extends these three plugins:
-* [Disable Wordpress Theme Update](http://wordpress.org/extend/plugins/disable-wordpress-theme-updates/), 
-* [Disable Wordpress Plugin Update](http://wordpress.org/extend/plugins/disable-wordpress-plugin-updates/),
-* [Disable Wordpress Core Update](http://wordpress.org/extend/plugins/disable-wordpress-core-update/)
+1. [Disable WordPress Theme Update](http://wordpress.org/extend/plugins/disable-wordpress-theme-updates/), 
+1. [Disable WordPress Plugin Update](http://wordpress.org/extend/plugins/disable-wordpress-plugin-updates/),
+1. [Disable WordPress Core Update](http://wordpress.org/extend/plugins/disable-wordpress-core-update/)
 
 It's *very* important that you keep your WordPress theme, core and plugins up to date. If you don't, your blog or website could 
 be **susceptible to security vulnerabilities** or performance issues.
