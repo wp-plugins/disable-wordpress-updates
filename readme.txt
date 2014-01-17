@@ -1,9 +1,9 @@
 === Disable All WordPress Updates ===
 Contributors: Alphawolf
 Donate link: http://www.schloebe.de/donate/
-Tags: disable, updates, theme, core
+Tags: disable, updates, theme, core, auto-update
 Requires at least: 2.8
-Tested up to: 3.8
+Tested up to: 3.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,9 @@ None. :)
 
 
 == Changelog ==
+
+= 1.4.0 =
+* Disable all automatic background updates (thanks sLa NGjI's)
 
 = 1.3.1.1 =
 * Fixed a PHP notice on dev environments (thanks dejernet)

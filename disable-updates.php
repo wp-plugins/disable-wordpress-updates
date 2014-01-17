@@ -10,11 +10,11 @@
 Plugin Name: Disable All WordPress Updates
 Description: Disables the theme, plugin and core update checking, the related cronjobs and notification system.
 Plugin URI:  http://wordpress.org/plugins/disable-wordpress-updates/
-Version:     1.3.1.1
-Author:      Oliver Schlöbe, originally developed by Tanja Preu&szlig;e 
+Version:     1.4.0
+Author:      Oliver Schlöbe
 Author URI:  http://www.schloebe.de/
 
-Copyright 2013 Oliver Schlöbe (email : scripts@schloebe.de)
+Copyright 2013-2014 Oliver Schlöbe (email : scripts@schloebe.de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("OSDWPUVERSION", "1.3.1.1");
+define("OSDWPUVERSION", "1.4.0");
 
 
 /**
@@ -61,6 +61,7 @@ class OS_Disable_WordPress_Updates {
 	function __construct() {
 		add_action('admin_init', array(&$this, 'admin_init'));
 		
+		
 		/*
 		 * Disable Theme Updates
 		 * 2.8 to 3.0
@@ -70,6 +71,7 @@ class OS_Disable_WordPress_Updates {
 		 * 3.0
 		 */
 		add_filter( 'pre_site_transient_update_themes', array($this, 'last_checked_now') );
+		
 		
 		/*
 		 * Disable Plugin Updates
@@ -81,6 +83,7 @@ class OS_Disable_WordPress_Updates {
 		 */
 		add_filter( 'pre_site_transient_update_plugins', array($this, 'last_checked_now') );
 		
+		
 		/*
 		 * Disable Core Updates
 		 * 2.8 to 3.0
@@ -90,6 +93,14 @@ class OS_Disable_WordPress_Updates {
 		 * 3.0
 		 */
 		add_filter( 'pre_site_transient_update_core', array($this, 'last_checked_now') );
+		
+
+		/*
+		 * Disable All Automatic Updates
+		 * 3.7 to present
+		 */
+		add_filter( 'auto_update_translation', '__return_false' );
+		add_filter( 'automatic_updater_disabled', '__return_true' );
 	}
 	
 
@@ -163,6 +174,12 @@ class OS_Disable_WordPress_Updates {
 		 * 3.0
 		 */
 		wp_clear_scheduled_hook( 'wp_version_check' );
+		
+		
+		/*
+		 * 3.7+
+		 */
+		wp_clear_scheduled_hook( 'wp_maybe_auto_update' );
 	}
 	
 
