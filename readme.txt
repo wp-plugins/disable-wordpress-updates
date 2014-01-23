@@ -57,6 +57,9 @@ None. :)
 
 == Changelog ==
 
+= 1.4.1 =
+* Fixed an issue that still allowed WordPress to update minor (security and maintenance) versions
+
 = 1.4.0 =
 * Disable all automatic background updates (thanks sLa NGjI's)
 

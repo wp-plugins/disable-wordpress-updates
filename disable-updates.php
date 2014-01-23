@@ -10,7 +10,7 @@
 Plugin Name: Disable All WordPress Updates
 Description: Disables the theme, plugin and core update checking, the related cronjobs and notification system.
 Plugin URI:  http://wordpress.org/plugins/disable-wordpress-updates/
-Version:     1.4.0
+Version:     1.4.1
 Author:      Oliver Schlöbe
 Author URI:  http://www.schloebe.de/
 
@@ -36,7 +36,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("OSDWPUVERSION", "1.4.0");
+define("OSDWPUVERSION", "1.4.1");
 
 
 /**
@@ -97,10 +97,23 @@ class OS_Disable_WordPress_Updates {
 
 		/*
 		 * Disable All Automatic Updates
-		 * 3.7 to present
+		 * 3.7+
+		 * 
+		 * @author	sLa NGjI's @ slangji.wordpress.com
 		 */
 		add_filter( 'auto_update_translation', '__return_false' );
 		add_filter( 'automatic_updater_disabled', '__return_true' );
+		add_filter( 'allow_minor_auto_core_updates', '__return_false' );
+		add_filter( 'allow_major_auto_core_updates', '__return_false' );
+		add_filter( 'allow_dev_auto_core_updates', '__return_false' );
+		add_filter( 'auto_update_core', '__return_false' );
+		add_filter( 'wp_auto_update_core', '__return_false' );
+		add_filter( 'auto_core_update_send_email', '__return_false' );
+		add_filter( 'send_core_update_notification_email', '__return_false' );
+		add_filter( 'auto_update_plugin', '__return_false' );
+		add_filter( 'auto_update_theme', '__return_false' );
+		add_filter( 'automatic_updates_send_debug_email', '__return_false' );
+		add_filter( 'automatic_updates_is_vcs_checkout', '__return_true' );
 	}
 	
 
@@ -179,6 +192,9 @@ class OS_Disable_WordPress_Updates {
 		/*
 		 * 3.7+
 		 */
+		remove_action( 'wp_maybe_auto_update', 'wp_maybe_auto_update' );
+		remove_action( 'admin_init', 'wp_maybe_auto_update' );
+		remove_action( 'admin_init', 'wp_auto_update_core' );
 		wp_clear_scheduled_hook( 'wp_maybe_auto_update' );
 	}
 	
