@@ -57,6 +57,9 @@ None. :)
 
 == Changelog ==
 
+= 1.4.2 =
+* Update indicator not showing in the front-end toolbar anymore (Thanks flixflix!)
+
 = 1.4.1 =
 * Fixed an issue that still allowed WordPress to update minor (security and maintenance) versions
 
@@ -84,8 +87,3 @@ None. :)
 
 = 1.0 =
 * Initial release
-
-
-== Upgrade Notice ==
-
-New plugin maintainer. Hello. :) Name's Oliver. Plus Code rewrite and cleanup
