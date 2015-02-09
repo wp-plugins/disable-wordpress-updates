@@ -57,6 +57,9 @@ None. :)
 
 == Changelog ==
 
+= 1.4.4 =
+* WordPress HTTP API level blocking of outgoing wordpress.org API checks
+
 = 1.4.3 =
 * Improved blocking of outgoing wordpress.org API checks which caused slow speed on local environments (Thanks Makapaka!)
 
