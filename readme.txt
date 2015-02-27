@@ -12,7 +12,7 @@ Disables the theme, plugin and core update checking, the related cronjobs and no
 
 == Description ==
 
-This plugin completely disables the theme, plugin and core update checking system in WordPress. The plugin prevents WordPress from 
+This plugin completely disables the theme, plugin and core update checking system in WordPress. The plugin prevents WordPress from
 checking for updates including cronjobs, and prevents any notifications from being displayed.
 
 This plugin combines und extends these three plugins:
@@ -21,10 +21,10 @@ This plugin combines und extends these three plugins:
 * [Disable WordPress Plugin Update](http://wordpress.org/extend/plugins/disable-wordpress-plugin-updates/)
 * [Disable WordPress Core Update](http://wordpress.org/extend/plugins/disable-wordpress-core-update/)
 
-It's *very* important that you keep your WordPress theme, core and plugins up to date. If you don't, your blog or website could 
+It's *very* important that you keep your WordPress theme, core and plugins up to date. If you don't, your blog or website could
 be **susceptible to security vulnerabilities** or performance issues.
 
-If you use this plugin, make sure you keep yourself up to date with new releases of your active WordPress version, plugins 
+If you use this plugin, make sure you keep yourself up to date with new releases of your active WordPress version, plugins
 and themes and update them as new versions are released (simply by deactivating this plugin for a short time).
 
 [Developer on Google+](https://plus.google.com/118074611982254715031 "Developer on Google+") | [Developer on Twitter](http://twitter.com/wpseek "Developer on Twitter")
@@ -46,7 +46,7 @@ Simply deativate the plugin for a short time. In case new versions are available
 3. Activate the plugin from your WordPress admin panel.
 4. Installation finished.
 
-With activating the plugin all theme, core and plugin update checkings are disabled. If you want to have a quick look if new versions 
+With activating the plugin all theme, core and plugin update checkings are disabled. If you want to have a quick look if new versions
 are existing, simply deactive this plugin for a short time.
 
 
@@ -56,6 +56,9 @@ None. :)
 
 
 == Changelog ==
+
+= 1.4.5 =
+* Check for already defined constants (Thanks Andreas Ek!)
 
 = 1.4.4 =
 * WordPress HTTP API level blocking of outgoing wordpress.org API checks
