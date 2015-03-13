@@ -57,6 +57,9 @@ None. :)
 
 == Changelog ==
 
+= 1.4.6 =
+* Hide maintenance and update nags
+
 = 1.4.5 =
 * Check for already defined constants (Thanks Andreas Ek!)
 
