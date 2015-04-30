@@ -10,7 +10,7 @@
 Plugin Name: Disable All WordPress Updates
 Description: Disables the theme, plugin and core update checking, the related cronjobs and notification system.
 Plugin URI:  http://wordpress.org/plugins/disable-wordpress-updates/
-Version:     1.4.6
+Version:     1.4.7
 Author:      Oliver Schlöbe
 Author URI:  http://www.schloebe.de/
 License:	 GPL2
@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("OSDWPUVERSION", "1.4.6");
+define("OSDWPUVERSION", "1.4.7");
 
 
 /**
@@ -49,6 +49,8 @@ define("OSDWPUVERSION", "1.4.6");
  * @author 		scripts@schloebe.de
  */
 class OS_Disable_WordPress_Updates {
+	private $__pluginsFiles;
+	private $__themeFiles;
 
 	/**
 	 * The OS_Disable_WordPress_Updates class constructor
@@ -60,12 +62,15 @@ class OS_Disable_WordPress_Updates {
 	 * @author 		scripts@schloebe.de
 	 */
 	function __construct() {
+		$this->__pluginsFiles = array();
+		$this->__themeFiles = array();
+		
 		add_action( 'admin_init', array(&$this, 'admin_init') );
 
 		if( !function_exists( 'get_plugins' ) ) require_once ABSPATH . 'wp-admin/includes/plugin.php';
-		foreach( get_plugins() as $file => $pl ) $this->__pluginsFiles[$file] = $pl['Version'];
-
-		foreach ( wp_get_themes() as $theme ) $this->__themeFiles[$theme->get_stylesheet()] = $theme->get('Version');
+		
+		if( count( get_plugins() ) > 0 ) foreach( get_plugins() as $file => $pl ) $this->__pluginsFiles[$file] = $pl['Version'];
+		if( count( wp_get_themes() ) > 0 ) foreach( wp_get_themes() as $theme ) $this->__themeFiles[$theme->get_stylesheet()] = $theme->get('Version');
 
 		/*
 		 * Disable Theme Updates
